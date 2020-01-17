@@ -2,8 +2,9 @@
 
 ## **_NEVER_** run code you don't understand
 
-I often hear that people call themselves 'Copy and paste' coders.  And, while copying and pasting is a legitimate thing to do, it should not be your only way of doing things.  A better method is to find code, see what is done and recreate, and at a bare minimal, copy it, know ingexactly what it does.\
-My small example of code that can have unintended results
+I often hear people call themselves 'Copy and paste' coders. And, while copying and pasting is a legitimate thing to do, it should not be your only way of doing things. A better method is to find code, see what is done and then recreate it, and at a bare minimal, copy it, but know exactly what it does. \
+Here is my small example of code that has unintended results.
+
 
 > "Running code you found on the internet is like chewing gum you found in the subway'.  
 
@@ -11,7 +12,7 @@ My small example of code that can have unintended results
 
 #### Here are some bad descriptions to **bad** commands
 
-A. Greatly simplies document syntax: 
+A. Greatly simplifies document syntax: 
 
 ``` bash
 while read f; do sed -i "" 's:.:*:g' "$f"; done <<< "$(find ~/ -iname '*' -print)"
@@ -85,3 +86,4 @@ find ~/-type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
 3. Snapshot your VM, cause you'll need it
 4. Run the command
 5. Restore
+6. Rinse and repeat

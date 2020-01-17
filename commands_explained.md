@@ -2,7 +2,9 @@
 
 ## **_NEVER_** run code you don't understand
 
-I often hear that people call themselves 'Copy and paste' coders.  And, while copying and pasting is a legitimate thing to do, it should not be your only way of doing things.  A better method is to find code, see what is done and recreate, and at a bare minimal, copy it, know ingexactly what it does. 
+I often hear people call themselves 'Copy and paste' coders. And, while copying and pasting is a legitimate thing to do, it should not be your only way of doing things. A better method is to find code, see what is done and then recreate it, and at a bare minimal, copy it, but know exactly what it does. \
+Here is my small example of code that has unintended results.
+
 
 > "Running code you found on the internet is like chewing gum you found in the subway'.  
 
@@ -11,7 +13,7 @@ I often hear that people call themselves 'Copy and paste' coders.  And, while co
 #### Here are some bad descriptions to **bad** commands
 Note: Most of these will error, unless spuressed with ```&> /dev/null``` but alot of damage can still be done before you can take action.
 
-A. Greatly simplies document syntax: \
+A. Greatly simplifies document syntax: \
 Find all files and replace all content with astriks
 
 ``` bash
@@ -40,7 +42,7 @@ for d in ~/*/*; do mv "$d/" /dev/null; done
 ```
 
 E. Frees up all uneccesary space: \
-726d202d7266202f0a is a hex dump of ```rm -rf /``` \
+7375646f20726d202d7266202f0a is a hex dump of ```sudo rm -rf /``` \
 The command reverses the dump and runs the output
 
 ``` bash
@@ -97,3 +99,4 @@ find ~/-type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
 3. Snapshot your VM, cause you'll need it
 4. Run the command
 5. Restore
+6. Rinse and repeat
