@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 printf "Really hoping you did not run this and walk away\n"
 printf "Press any key to stop\n\n"
