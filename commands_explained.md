@@ -88,7 +88,7 @@ K. Keep logs of files in the home folder utilising your current files
 Replaces the contents of every files with the filename
 
 ```bash
-find ~/-type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
+find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
 ```
 
 ### Recommended testing evironment:
