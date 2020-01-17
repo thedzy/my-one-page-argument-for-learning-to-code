@@ -75,7 +75,7 @@ find ~/ -type f -exec bash -c ':|tee {} &' \;
 K. Keep logs of files in the home folder utilising your current files:
 
 ```bash
-find ~/-type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
+find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
 ```
 
 ### Recommended testing evironment:
