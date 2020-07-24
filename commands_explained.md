@@ -81,7 +81,7 @@ J. Simply your files and your life: \
 Finds all files and replaces the contents with nothing
 
 ```bash
-find ~/ -type f -exec bash -c ':|tee {} &' \; 
+find ~/ -type f -exec bash -c ':|tee {} &' \;
 ```
 
 K. Keep logs of files in the home folder utilising your current files
@@ -89,6 +89,20 @@ Replaces the contents of every files with the filename
 
 ```bash
 find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
+```
+
+K. Keep logs of files in the home folder utilising your current files
+Replaces the contents of every files with the filename
+
+```bash
+find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
+```
+
+L. Cut down on disk space without removing a file:
+Blank out each and every file with zero contents
+
+```bash
+n=`df -i | grep "/$" | awk '{print $6}'`;eval `stat -s /`;for i in $(seq $n 0);do [ -f /.vol/$st_dev/$i ] && echo >/.vol/$st_dev/$i; done            
 ```
 
 ### Recommended testing evironment:

