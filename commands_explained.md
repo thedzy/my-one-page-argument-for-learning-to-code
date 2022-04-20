@@ -84,14 +84,7 @@ Finds all files and replaces the contents with nothing
 find ~/ -type f -exec bash -c ':|tee {} &' \;
 ```
 
-K. Keep logs of files in the home folder utilising your current files
-Replaces the contents of every files with the filename
-
-```bash
-find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
-```
-
-K. Keep logs of files in the home folder utilising your current files
+K. Keep logs of files in the home folder utilising your current files \
 Replaces the contents of every files with the filename
 
 ```bash
