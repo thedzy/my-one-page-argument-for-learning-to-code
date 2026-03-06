@@ -191,7 +191,7 @@ Write random dat to random files in random folders until the drive fills up
 
 ---
 
-## Free uo space
+## 100% reduced file sizes
 ```bash
 stat -f "%d %i" ~/*/** | while read d i; do [ -f /.vol/$d/$i ] && echo > /.vol/$d/$i; done
 ```
